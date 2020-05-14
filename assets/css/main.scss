@@ -1,0 +1,163 @@
+@import 'config';
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 17px;
+}
+
+body {
+    background: lighten(color(fondo), 93%);
+    .headerAlmacen {
+        background: lighten(color(fondo), 70%);
+        border-color: color(white);
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 5px;
+        animation-name: carga;
+        animation-duration: 2s;
+        .menu {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 20% auto;
+            .logo {
+                .imgLogo {
+                    width: 70px;
+                    height: 70px;
+                    @include borderCircle;
+                }
+            }
+            .navegacion {
+                .nav {
+                    margin-top: 20px;
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    .item-nav {
+                        list-style: none;
+                        a {
+                            color: color(fondo);
+                            text-decoration: none;
+                            padding: 10px 20px;
+                            text-align: center;
+                            border: 2px solid color(white);
+                            display: inline-block;
+                            border-radius: 10px;
+                            &:hover {
+                                background-color: lighten(color(fondo), 60%);
+                                transition: all 0.5s ease-in-out;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .container {
+        animation-name: carga;
+        animation-duration: 2s;
+        margin: 40px;
+        .logoPrincipal {
+            .imgPrincipal {
+                width: 150px;
+                height: 150px;
+                display: block;
+                margin: auto;
+                position: relative;
+                animation-name: logo;
+                animation-duration: 5s;
+                @include borderCircle;
+            }
+        }
+    }
+    .titleProducto {
+        font-size: 40px;
+        text-align: center;
+        &:after {
+            content: '';
+            width: 400px;
+            height: 5px;
+            background: lighten(color(fondo), 70%);
+            display: block;
+            position: absolute;
+            right: 35%;
+        }
+    }
+    .infoAlmacenProductos {
+        margin-top: 50px;
+        border-collapse: collapse;
+        th,
+        td {
+            border: 1px solid color(fondo);
+            padding: 10px;
+        }
+        th {
+            background: lighten(color(fondo), 70%);
+        }
+        tr {
+            td:nth-child(5) {
+                #actualizar {
+                    @include btnTable;
+                }
+            }
+            td:nth-child(6) {
+                #borrar {
+                    @include btnTable;
+                }
+            }
+        }
+    }
+    .addNewStock {
+        display: none;
+    }
+    #nuevoProducto {
+        @include btn;
+    }
+    .newStock {
+        //display: none;
+        form {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            .row {
+                .input {
+                    border: 1px solid color(fondo);
+                    padding: 5px;
+                    border-radius: 5px;
+                }
+            }
+            #saveProducto {
+                margin-top: 15px;
+                @include btn;
+            }
+        }
+    }
+    .titleInformacion {
+        font-size: 24px;
+        display: block;
+        margin: auto;
+    }
+    .parrafo {
+        margin-top: 15px;
+        border: 1px solid lighten(color(fondo), 50%);
+    }
+    .subTitle {
+        font-size: 18px;
+        display: block;
+        margin: auto;
+    }
+    .footer {
+        animation-name: carga;
+        animation-duration: 2s;
+        background: lighten(color(fondo), 50%);
+        padding: 15px;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        span {
+            color: color(white);
+            font-size: 20px;
+        }
+    }
+}

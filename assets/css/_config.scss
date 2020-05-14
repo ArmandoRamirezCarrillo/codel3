@@ -1,0 +1,62 @@
+$colors: (fondo:#000000, white:#ffff);
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+@mixin borderCircle {
+    border-color: color(white);
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50%;
+}
+
+@mixin btnTable {
+    background: lighten(color(fondo), 75%);
+    padding: 5px;
+    border: 1px solid color(fondo);
+    border-radius: 5px;
+    &:hover {
+        @include hoverButton;
+    }
+}
+
+@mixin btn {
+    border: 1px solid color(fondo);
+    border-radius: 5px;
+    padding: 5px;
+    background: lighten(color(fondo), 60%);
+    &:hover {
+        @include hoverButton;
+    }
+}
+
+@mixin hoverButton {
+    cursor: pointer;
+    background: lighten(color(fondo), 50%);
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes logo {
+    0% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        transform: scale(0.1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1) rotate(360deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+        filter: none;
+    }
+}
+
+@keyframes carga {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

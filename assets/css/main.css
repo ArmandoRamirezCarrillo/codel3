@@ -1,0 +1,293 @@
+@-webkit-keyframes logo {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(0.1) rotate(0deg);
+            transform: scale(0.1) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: scale(1) rotate(360deg);
+            transform: scale(1) rotate(360deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(360deg);
+            transform: scale(1) rotate(360deg);
+    opacity: 1;
+    -webkit-filter: none;
+            filter: none;
+  }
+}
+
+@keyframes logo {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(0.1) rotate(0deg);
+            transform: scale(0.1) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: scale(1) rotate(360deg);
+            transform: scale(1) rotate(360deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(360deg);
+            transform: scale(1) rotate(360deg);
+    opacity: 1;
+    -webkit-filter: none;
+            filter: none;
+  }
+}
+
+@-webkit-keyframes carga {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes carga {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-size: 17px;
+}
+
+body {
+  background: #ededed;
+}
+
+body .headerAlmacen {
+  background: #b3b3b3;
+  border-color: #ffff;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 5px;
+  -webkit-animation-name: carga;
+          animation-name: carga;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+body .headerAlmacen .menu {
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% auto;
+      grid-template-columns: 20% auto;
+}
+
+body .headerAlmacen .menu .logo .imgLogo {
+  width: 70px;
+  height: 70px;
+  border-color: #ffff;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 50%;
+}
+
+body .headerAlmacen .menu .navegacion .nav {
+  margin-top: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+body .headerAlmacen .menu .navegacion .nav .item-nav {
+  list-style: none;
+}
+
+body .headerAlmacen .menu .navegacion .nav .item-nav a {
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 20px;
+  text-align: center;
+  border: 2px solid #ffff;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+body .headerAlmacen .menu .navegacion .nav .item-nav a:hover {
+  background-color: #999999;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .container {
+  -webkit-animation-name: carga;
+          animation-name: carga;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  margin: 40px;
+}
+
+body .container .logoPrincipal .imgPrincipal {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: auto;
+  position: relative;
+  -webkit-animation-name: logo;
+          animation-name: logo;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  border-color: #ffff;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 50%;
+}
+
+body .titleProducto {
+  font-size: 40px;
+  text-align: center;
+}
+
+body .titleProducto:after {
+  content: '';
+  width: 400px;
+  height: 5px;
+  background: #b3b3b3;
+  display: block;
+  position: absolute;
+  right: 35%;
+}
+
+body .infoAlmacenProductos {
+  margin-top: 50px;
+  border-collapse: collapse;
+}
+
+body .infoAlmacenProductos th,
+body .infoAlmacenProductos td {
+  border: 1px solid #000000;
+  padding: 10px;
+}
+
+body .infoAlmacenProductos th {
+  background: #b3b3b3;
+}
+
+body .infoAlmacenProductos tr td:nth-child(5) #actualizar {
+  background: #bfbfbf;
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+body .infoAlmacenProductos tr td:nth-child(5) #actualizar:hover {
+  cursor: pointer;
+  background: gray;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .infoAlmacenProductos tr td:nth-child(6) #borrar {
+  background: #bfbfbf;
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+body .infoAlmacenProductos tr td:nth-child(6) #borrar:hover {
+  cursor: pointer;
+  background: gray;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .addNewStock {
+  display: none;
+}
+
+body #nuevoProducto {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  background: #999999;
+}
+
+body #nuevoProducto:hover {
+  cursor: pointer;
+  background: gray;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .newStock form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+body .newStock form .row .input {
+  border: 1px solid #000000;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+body .newStock form #saveProducto {
+  margin-top: 15px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  background: #999999;
+}
+
+body .newStock form #saveProducto:hover {
+  cursor: pointer;
+  background: gray;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body .titleInformacion {
+  font-size: 24px;
+  display: block;
+  margin: auto;
+}
+
+body .parrafo {
+  margin-top: 15px;
+  border: 1px solid gray;
+}
+
+body .subTitle {
+  font-size: 18px;
+  display: block;
+  margin: auto;
+}
+
+body .footer {
+  -webkit-animation-name: carga;
+          animation-name: carga;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  background: gray;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+body .footer span {
+  color: #ffff;
+  font-size: 20px;
+}
+/*# sourceMappingURL=main.css.map */
