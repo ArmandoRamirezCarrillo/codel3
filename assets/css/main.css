@@ -177,28 +177,28 @@ body .infoAlmacenProductos th {
   background: #b3b3b3;
 }
 
-body .infoAlmacenProductos tr td:nth-child(5) #actualizar {
+body .infoAlmacenProductos tr td:nth-child(5) button.actualizarBtn {
   background: #bfbfbf;
   padding: 5px;
   border: 1px solid #000000;
   border-radius: 5px;
 }
 
-body .infoAlmacenProductos tr td:nth-child(5) #actualizar:hover {
+body .infoAlmacenProductos tr td:nth-child(5) button.actualizarBtn:hover {
   cursor: pointer;
   background: gray;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
-body .infoAlmacenProductos tr td:nth-child(6) #borrar {
+body .infoAlmacenProductos tr td:nth-child(6) button.borrarBtn {
   background: #bfbfbf;
   padding: 5px;
   border: 1px solid #000000;
   border-radius: 5px;
 }
 
-body .infoAlmacenProductos tr td:nth-child(6) #borrar:hover {
+body .infoAlmacenProductos tr td:nth-child(6) button.borrarBtn:hover {
   cursor: pointer;
   background: gray;
   -webkit-transition: all 0.5s ease-in-out;
@@ -206,6 +206,10 @@ body .infoAlmacenProductos tr td:nth-child(6) #borrar:hover {
 }
 
 body .addNewStock {
+  display: block;
+}
+
+body .addNewStockDisable {
   display: none;
 }
 
@@ -221,6 +225,14 @@ body #nuevoProducto:hover {
   background: gray;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+body .newStockEnable {
+  display: block;
+}
+
+body .newStockDiable {
+  display: none;
 }
 
 body .newStock form {

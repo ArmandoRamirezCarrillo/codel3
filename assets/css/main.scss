@@ -94,25 +94,33 @@ body {
         }
         tr {
             td:nth-child(5) {
-                #actualizar {
+                button.actualizarBtn {
                     @include btnTable;
                 }
             }
             td:nth-child(6) {
-                #borrar {
+                button.borrarBtn {
                     @include btnTable;
                 }
             }
         }
     }
     .addNewStock {
+        display: block;
+    }
+    .addNewStockDisable {
         display: none;
     }
     #nuevoProducto {
         @include btn;
     }
+    .newStockEnable {
+        display: block;
+    }
+    .newStockDiable {
+        display: none;
+    }
     .newStock {
-        //display: none;
         form {
             display: grid;
             grid-template-columns: auto auto auto;
