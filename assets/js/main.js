@@ -70,34 +70,42 @@ saveProducto.addEventListener('click', () => {
                 }
             });
         } else {
-            let idProductoTbl = document.getElementById('idProductoTbl');
-            console.log(idProductoTbl.textContent);
-            // $.ajax({
-            //     type: 'POST',
-            //     url: 'http://localhost/codel3/Welcome/updateProduct',
-            //     dataType: 'json',
-            //     data: {
-            //         'nombre': nombreProducto.value,
-            //         'Caracteristicas': caracteristicaProducto.value,
-            //         'Cantidad': cantidadProducto.value
-            //     },
-            //     beforeSend: function() {
-            //         console.log('Procesando...');
-            //     },
-            //     success: function(result) {
-            //         addNewStockDiv.classList.remove('addNewStockDisable');
-            //         addNewStockDiv.classList.add('addNewStock');
-            //         newStockDiv.classList.remove('newStockEnable');
-            //         newStockDiv.classList.add('newStockDiable');
-            //         nombreProducto.value = "";
-            //         caracteristicaProducto.value = "";
-            //         cantidadProducto.value = "";
-            //         location.reload();
-            //     },
-            //     error: function(x, e) {
-            //         console.log(`Ocurrio un error`);
-            //     }
-            // });
+            let txtNewTitle = document.getElementById('txtNewTitle');
+            console.log(txtNewTitle.textContent);
+            let idProducto = txtNewTitle.textContent.split('-');
+            console.log(`id: ${idProducto[1]}`);
+            console.log(`nombre: ${nombreProducto.value}`);
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost/codel3/Welcome/updateProduct',
+                dataType: 'json',
+                data: {
+                    'idInventario': idProducto[1],
+                    'nombre': nombreProducto.value,
+                    'Caracteristicas': caracteristicaProducto.value,
+                    'Cantidad': cantidadProducto.value
+                },
+                beforeSend: function() {
+                    console.log('Procesando...');
+                },
+                success: function(result) {
+                    if (!result) {
+                        addNewStockDiv.classList.remove('addNewStockDisable');
+                        addNewStockDiv.classList.add('addNewStock');
+                        newStockDiv.classList.remove('newStockEnable');
+                        newStockDiv.classList.add('newStockDiable');
+                        nombreProducto.value = "";
+                        caracteristicaProducto.value = "";
+                        cantidadProducto.value = "";
+                        location.reload();
+                    }
+                },
+                error: function(x, e) {
+                    console.log(`Ocurrio un error`);
+                }
+            });
+
         }
     }
 });
@@ -105,13 +113,25 @@ saveProducto.addEventListener('click', () => {
 let actualizarProducto = id => {
     let infoProducto = id.id.split('-');
     let txtNewTitle = document.getElementById('txtNewTitle');
-    txtNewTitle.innerHTML = "Actualizar producto";
-    let nombreProductoTbl = document.getElementById('nombreProductoTbl');
-    nombreProducto.value = nombreProductoTbl.textContent;
-    let caracteristicasProductoTbl = document.getElementById('caracteristicasProductoTbl');
-    caracteristicaProducto.value = caracteristicasProductoTbl.textContent;
-    let cantidadProductoTbl = document.getElementById('cantidadProductoTbl');
-    cantidadProducto.value = cantidadProductoTbl.textContent;
+    txtNewTitle.innerHTML = `Producto-${infoProducto[1]}`;
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost/codel3/Welcome/dataIdProduct',
+        dataType: 'json',
+        data: { 'idInventario': infoProducto[1] },
+        beforeSend: function() {
+            console.log('Procesando...');
+        },
+        success: function(result) {
+            nombreProducto.value = result[0]['nombre'];
+            caracteristicaProducto.value = result[0]['Caracteristicas'];
+            cantidadProducto.value = result[0]['Cantidad'];
+            console.log(result[0]);
+        },
+        error: function(x, e) {
+            console.log(`Ocurrio un error`);
+        }
+    });
     openInputs();
     saveProducto.setAttribute('id', 'updateProducto');
 };
