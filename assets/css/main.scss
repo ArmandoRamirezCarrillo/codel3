@@ -135,6 +135,10 @@ body {
                 margin-top: 15px;
                 @include btn;
             }
+            #updateProducto {
+                margin-top: 15px;
+                @include btn;
+            }
         }
     }
     .titleInformacion {

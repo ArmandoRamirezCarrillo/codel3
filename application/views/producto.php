@@ -14,22 +14,14 @@
 		<tbody>
 			<?php foreach($result as $row){ ?>
 			<tr>
-				<td scope="row"><?php echo $row->idInventario; ?></td>
-				<td><?php echo $row->nombre; ?></td>
-				<td><?php echo $row->Caracteristicas; ?></td>
-				<td><?php echo $row->Cantidad; ?></td>
-				<td><button id="<?php echo "actualizar-".$row->idInventario; ?>" class="actualizarBtn">Actualizar</button></td>
+				<td scope="row" id="idProductoTbl"><?php echo $row->idInventario; ?></td>
+				<td id="nombreProductoTbl"><?php echo $row->nombre; ?></td>
+				<td id="caracteristicasProductoTbl"><?php echo $row->Caracteristicas; ?></td>
+				<td id="cantidadProductoTbl"><?php echo $row->Cantidad; ?></td>
+				<td><button id="<?php echo "actualizar-".$row->idInventario; ?>" class="actualizarBtn" onclick="actualizarProducto(this)">Actualizar</button></td>
 				<td><button id="<?php echo "borrar-".$row->idInventario; ?>" class="borrarBtn">Borrar</button></td>
 			</tr>
 			<?php } ?>
-			<!-- <tr>
-				<td>2</td>
-				<td>phone</td>
-				<td>This phone is new in the market</td>
-				<td>50</td>
-				<td><button id="actualizar">Actualizar</button></td>
-				<td><button id="borrar">Borrar</button></td>
-			</tr> -->
 		</tbody>
 	</table>
 </div>
@@ -39,7 +31,7 @@
 	</button>
 </div>
 <div id="newStockDiv" class="container newStock newStockDiable">
-	<h3>Nuevo producto</h3>
+	<h3 id="txtNewTitle">Nuevo producto</h3>
 	<form>
 		<div class="row">
 			<label for="nombreProducto">Nombre del producto</label>

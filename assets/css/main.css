@@ -263,6 +263,21 @@ body .newStock form #saveProducto:hover {
   transition: all 0.5s ease-in-out;
 }
 
+body .newStock form #updateProducto {
+  margin-top: 15px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  background: #999999;
+}
+
+body .newStock form #updateProducto:hover {
+  cursor: pointer;
+  background: gray;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
 body .titleInformacion {
   font-size: 24px;
   display: block;
