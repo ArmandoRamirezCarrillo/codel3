@@ -13,12 +13,7 @@
 			');
 			return $query->result();
 		}
-		function addNew(){
-			$data = array (
-				'nombre' => $this->input->post('nombre'),
-				'Caracteristicas' => $this->input->post('Caracteristicas'),
-				'Cantidad' => $this->input->post('Cantidad')
-			);
-			$this->db->insert('tbl_name', $data);
+		function addNew($data){
+			$this->db->insert('inventario', $data);
 		}
 	}

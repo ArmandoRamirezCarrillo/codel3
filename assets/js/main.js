@@ -55,18 +55,14 @@ saveProducto.addEventListener('click', () => {
                 console.log('Procesando...');
             },
             success: function(result) {
-                if (result) {
-                    addNewStockDiv.classList.remove('addNewStockDisable');
-                    addNewStockDiv.classList.add('addNewStock');
-                    newStockDiv.classList.remove('newStockEnable');
-                    newStockDiv.classList.add('newStockDiable');
-                    // console.log(`nombre: ${nombreProducto.value}, caract: ${caracteristicaProducto.value}`);
-                    nombreProducto.value = "";
-                    caracteristicaProducto.value = "";
-                    cantidadProducto.value = "";
-                } else {
-                    alert('Error al insertar el nuevo producto');
-                }
+                addNewStockDiv.classList.remove('addNewStockDisable');
+                addNewStockDiv.classList.add('addNewStock');
+                newStockDiv.classList.remove('newStockEnable');
+                newStockDiv.classList.add('newStockDiable');
+                nombreProducto.value = "";
+                caracteristicaProducto.value = "";
+                cantidadProducto.value = "";
+                location.reload();
             },
             error: function(x, e) {
                 console.log(`Ocurrio un error`);
