@@ -44,4 +44,15 @@
 				return false;
 			}
 		}
+		function deleteData($data){
+			$query = $this->db->query('
+				UPDATE inventario SET baja=1,fechaBaja=CURRENT_TIMESTAMP()
+				WHERE idInventario = '.$data['idInventario'].';
+			');
+			if($query){
+				return true;
+			}else{
+				return false;
+			}
+		}
 	}

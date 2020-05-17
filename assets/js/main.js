@@ -135,3 +135,23 @@ let actualizarProducto = id => {
     openInputs();
     saveProducto.setAttribute('id', 'updateProducto');
 };
+
+let borrarProducto = id => {
+    let productoArray = id.id.split('-');
+    console.log(productoArray);
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost/codel3/Welcome/deleteProduct',
+        dataType: 'json',
+        data: { 'idInventario': productoArray[1] },
+        beforeSend: function() {
+            console.log('Procesando...');
+        },
+        success: function(result) {
+            location.reload();
+        },
+        error: function(x, e) {
+            console.log(`Ocurrio un error`);
+        }
+    });
+};

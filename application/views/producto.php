@@ -19,7 +19,7 @@
 				<td id="caracteristicasProductoTbl"><?php echo $row->Caracteristicas; ?></td>
 				<td id="cantidadProductoTbl"><?php echo $row->Cantidad; ?></td>
 				<td><button id="<?php echo "actualizar-".$row->idInventario; ?>" class="actualizarBtn" onclick="actualizarProducto(this)">Actualizar</button></td>
-				<td><button id="<?php echo "borrar-".$row->idInventario; ?>" class="borrarBtn">Borrar</button></td>
+				<td><button id="<?php echo "borrar-".$row->idInventario; ?>" class="borrarBtn" onclick="borrarProducto(this)">Borrar</button></td>
 			</tr>
 			<?php } ?>
 		</tbody>

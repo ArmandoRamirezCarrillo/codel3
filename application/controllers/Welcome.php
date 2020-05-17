@@ -52,10 +52,20 @@ class Welcome extends CI_Controller {
 			$this->output->set_output(json_encode(false));
 		}
 	}
+	public function deleteProduct(){
+		$data = array(
+			'idInventario' => $this->input->post('idInventario')
+		);
+		$deleteInfo = $this->Almacen_model->deleteData($data);
+		if($deleteInfo){
+			$this->output->set_output(json_encode($deleteInfo));
+		}else{
+			$this->output->set_output(json_encode(false));
+		}
+	}
 	public function info(){
 		$this->load->view('includes/header');
 		$this->load->view('info');
 		$this->load->view('includes/footer');
 	}
-
 }
